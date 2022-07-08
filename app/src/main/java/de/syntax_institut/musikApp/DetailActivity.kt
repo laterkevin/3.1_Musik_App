@@ -23,30 +23,48 @@ class DetailActivity : AppCompatActivity() {
 
         // Die Informationen werden aus dem intent Objekt geholt
         // TODO Schreibe hier deinen Code
+        val stringId = intent.extras?.getInt("stringId")
+        val imageId = intent.extras?.getInt("imageId")
+        val lenghtId = intent.extras?.getInt("lenghtId")
 
         // Die Informationen werden aus dem intent Objekt geholt
         // TODO Schreibe hier deinen Code
+        var detailText = ""
 
         // Die Informationen werden zugewiesen (nach Test auf null)
         // TODO Schreibe hier deinen Code
+        if (stringId != null) {
+            detailText = getString(stringId)
+            binding.tvTitleDetail.text = detailText
+        }else {
+            binding.tvTitleDetail.text = "Titel nicht gefunden"
+        }
+        if (imageId != null) {
+            binding.ivCoverDetail.setImageResource(imageId)
+        }
 
         // onClickListener für den Share button
         binding.btnShare.setOnClickListener {
 
             // Erstellt einen Intent mit der Absicht etwas zu Teilen
             // TODO Schreibe hier deinen Code
+            val intent = Intent(Intent.ACTION_SEND)
 
             // Füge einen Text hinzu
             // TODO Schreibe hier deinen Code
+            intent.putExtra(Intent.EXTRA_TEXT, "Höre dir dieses Track an $detailText !!!")
 
             // Gib dem Intent einen Typ
             // TODO Schreibe hier deinen Code
+            intent.type = "text/plain"
 
             // Erstelle die Auswahl
             // TODO Schreibe hier deinen Code
+            val shareIntent = Intent.createChooser(intent, null)
 
             // starte die Auswahl Activity
             // TODO Schreibe hier deinen Code
+            startActivity(shareIntent)
         }
     }
 }
