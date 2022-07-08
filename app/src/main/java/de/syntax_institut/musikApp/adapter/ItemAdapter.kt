@@ -75,7 +75,7 @@ class ItemAdapter(
             val intent = Intent(context, DetailActivity::class.java)
             intent.putExtra("stringId", song.stringResource)
             intent.putExtra("imageId", song.imageResource)
-            intent.putExtra("lenghtId", song.songLength)
+            intent.putExtra("lengthId", song.songLength)
             context.startActivity(intent)
         }
     }

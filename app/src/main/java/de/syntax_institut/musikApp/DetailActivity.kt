@@ -25,7 +25,7 @@ class DetailActivity : AppCompatActivity() {
         // TODO Schreibe hier deinen Code
         val stringId = intent.extras?.getInt("stringId")
         val imageId = intent.extras?.getInt("imageId")
-        val lenghtId = intent.extras?.getInt("lenghtId")
+        val lengthId = intent.extras?.getInt("lengthId")
 
         // Die Informationen werden aus dem intent Objekt geholt
         // TODO Schreibe hier deinen Code
@@ -37,7 +37,7 @@ class DetailActivity : AppCompatActivity() {
             detailText = getString(stringId)
             binding.tvTitleDetail.text = detailText
         }else {
-            binding.tvTitleDetail.text = "Titel nicht gefunden"
+            binding.tvTitleDetail.text = "Titel nicht gefunden!"
         }
         if (imageId != null) {
             binding.ivCoverDetail.setImageResource(imageId)
