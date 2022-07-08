@@ -66,5 +66,11 @@ class DetailActivity : AppCompatActivity() {
             // TODO Schreibe hier deinen Code
             startActivity(shareIntent)
         }
+        binding.ibNext.setOnClickListener {
+
+        }
+        binding.ibPrevious.setOnClickListener {
+
+        }
     }
 }
